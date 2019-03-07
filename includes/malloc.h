@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 12:26:07 by amazurie          #+#    #+#             */
-/*   Updated: 2019/02/20 10:32:39 by amazurie         ###   ########.fr       */
+/*   Updated: 2019/02/12 14:43:25 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void				*malloc(size_t size);
 void				free(void *ptr);
 void				*realloc(void *ptr, size_t size);
 void				show_alloc_mem();
+void				*calloc(size_t nmemb, size_t size);
 
 void				*ft_malloc(size_t size);
 void				ft_free(void *ptr);

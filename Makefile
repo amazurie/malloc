@@ -6,7 +6,7 @@
 #    By: amazurie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 11:58:21 by amazurie          #+#    #+#              #
-#    Updated: 2019/03/07 17:14:43 by amazurie         ###   ########.fr        #
+#    Updated: 2019/03/07 17:34:48 by amazurie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC	=	malloc.c \
 		realloc.c \
 		block.c \
 		show_alloc_mem.c \
+		calloc.c \
 		free_block.c \
 		utils.c
 
@@ -43,12 +44,12 @@ SRCS    = $(addprefix $(SRCDIR), $(SRC))
 OBJS    = $(addprefix $(OBJDIR), $(SRC:.c=.o))
 DEPS	:= $(OBJS:.o=.d)
 
-all: checklib $(OBJDIR) $(NAME)
+all: $(OBJDIR) $(NAME)
 
 checklib:
 	@make -C $(LIBSRC)
 
-$(NAME): $(LIB) $(OBJS)
+$(NAME): $(LIB) $(OBJS) checklib
 	@$(CC) $(FLAGS) -L./$(LIBSRC) -lft -ltermcap -shared -o $(NAME) $(OBJS)
 	@ln -sf $(NAME) $(HOST)
 	@echo "\r\c"
@@ -63,7 +64,7 @@ $(OBJDIR):
 $(LIB):
 	@echo "${CYN}Processing ${NC}./libft ${CYN}[${NC}...${CYN}]${NC}"
 	@make checklib
-	@echo "\n${CYN}Processing ${NC}./objs ${CYN}[${NC}...${CYN}]${NC}"
+	@echo "${CYN}Processing ${NC}./objs ${CYN}[${NC}...${CYN}]${NC}"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(HEADER)$(H_NAME)
 	@echo "\r\c"
