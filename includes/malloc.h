@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 12:26:07 by amazurie          #+#    #+#             */
-/*   Updated: 2019/02/12 14:43:25 by amazurie         ###   ########.fr       */
+/*   Updated: 2019/03/14 11:08:59 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 # include <pthread.h>
 # include "../libft/includes/libft.h"
 
-# define TINY_REGION_ROW	512
+# define TINY_REGION_ROW	256
 # define TINY_MAX_AREA		1
 # define TINY_RESOLUTION	16
-# define TINY_MAX_SIZE		993
+# define TINY_MAX_SIZE		1008
 
-# define SMALL_REGION_ROW	4096
+# define SMALL_REGION_ROW	2048
 # define SMALL_MAX_AREA		1
 # define SMALL_RESOLUTION	512
-# define SMALL_MAX_SIZE		15345
+# define SMALL_MAX_SIZE		16368
 
 extern pthread_mutex_t	g_mutex;
 
